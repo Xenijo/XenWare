@@ -1,0 +1,9 @@
+local _Result = syn.request{
+   Url = ('%shttpbin.org/get'):format('http://'),
+   Method = "GET",
+}
+
+local Result = game:GetService('HttpService'):JSONDecode(_Result.Body).headers['Syn-Fingerprint']
+
+
+setclipboard(Result)
